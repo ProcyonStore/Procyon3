@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procyon | бренд одежды</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(145deg, #0a1f2f 0%, #1e3f5a 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card {
+            max-width: 500px;
+            width: 100%;
+            background: rgba(12, 32, 48, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 40px;
+            padding: 35px 30px;
+            border: 1px solid rgba(90, 180, 240, 0.3);
+            box-shadow: 0 30px 45px -20px #001a2b, 0 0 0 1px #2b6c94 inset;
+        }
+
+        /* заголовок */
+        .brand {
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        .brand h1 {
+            font-size: 42px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #d2edff, #8fc1e8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+            text-shadow: 0 0 15px rgba(70, 160, 255, 0.5);
+            line-height: 1.2;
+        }
+
+        .brand span {
+            display: block;
+            font-size: 18px;
+            font-weight: 300;
+            color: #aacce9;
+            letter-spacing: 3px;
+            margin-top: 5px;
+            text-transform: uppercase;
+        }
+
+        /* разделы */
+        .section {
+            background: rgba(0, 35, 55, 0.5);
+            border-radius: 28px;
+            padding: 22px 25px;
+            margin-bottom: 25px;
+            border: 1px solid #2e6790;
+            box-shadow: inset 0 0 15px #0d3145;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #b5deff;
+            font-size: 20px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+            border-bottom: 1px dashed #3a74a0;
+            padding-bottom: 12px;
+        }
+
+        .section-title .icon {
+            font-size: 28px;
+            filter: drop-shadow(0 0 8px #0099ff);
+        }
+
+        /* контент */
+        .link-block {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(20, 55, 80, 0.7);
+            border-radius: 60px;
+            padding: 15px 20px;
+            border: 1px solid #3780b5;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .link-block:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -8px #001a33, 0 0 0 1px #63b0ff;
+        }
+
+        .link-icon {
+            font-size: 30px;
+            min-width: 48px;
+            text-align: center;
+            color: #a0d0ff;
+        }
+
+        .link-text {
+            font-size: 18px;
+            word-break: break-word;
+            color: #e0f0ff;
+        }
+
+        .link-text a {
+            color: #ffffff;
+            text-decoration: none;
+            border-bottom: 1px solid #4690cf;
+            font-weight: 500;
+            transition: border-color 0.2s;
+        }
+
+        .link-text a:hover {
+            border-bottom-color: #aadaff;
+        }
+
+        /* контакты */
+        .contacts-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+.contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(10, 45, 70, 0.8);
+            border-radius: 50px;
+            padding: 14px 22px;
+            border: 1px solid #2d7bb0;
+            transition: all 0.2s;
+        }
+
+        .contact-item:hover {
+            border-color: #70bcff;
+            background: rgba(15, 55, 85, 0.9);
+        }
+
+        .contact-icon {
+            font-size: 26px;
+            min-width: 42px;
+            text-align: center;
+            filter: drop-shadow(0 0 5px #2f8eff);
+        }
+
+        .contact-info {
+            font-size: 18px;
+            color: #d3ebff;
+        }
+
+        .contact-info a {
+            color: #ffffff;
+            text-decoration: none;
+            border-bottom: 1px solid #3982c0;
+            transition: border-color 0.2s;
+        }
+
+        .contact-info a:hover {
+            border-bottom-color: #9aceff;
+        }
+
+        .contact-label {
+            font-size: 14px;
+            color: #7fb6e0;
+            margin-right: 6px;
+            display: inline-block;
+        }
+
+        /* маленький декоративный элемент */
+        .glow-line {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #3f9eff, #6bc1ff, #3f9eff, transparent);
+            margin: 25px 0 10px;
+            border-radius: 2px;
+            opacity: 0.5;
+        }
+
+        .signature {
+            text-align: right;
+            color: #326f99;
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        /* адаптация */
+        @media (max-width: 450px) {
+            .brand h1 {
+                font-size: 36px;
+            }
+            .section {
+                padding: 18px 18px;
+            }
+            .link-text, .contact-info {
+                font-size: 16px;
+            }
+            .link-icon, .contact-icon {
+                font-size: 24px;
+                min-width: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <!-- шапка бренда -->
+        <div class="brand">
+            <h1>PROCYON</h1>
+            <span>бренд одежды</span>
+        </div>
+
+        <!-- ассортимент -->
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">📋</span>
+                <span>актуальный ассортимент</span>
+            </div>
+            <div class="link-block">
+                <div class="link-icon">🛍️</div>
+                <div class="link-text">
+                    <a href="https://t.me/Procyon_store" target="_blank" rel="noopener">t.me/Procyon_store</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- связь для заказа -->
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">📞</span>
+                <span>связь для заказа</span>
+                <span style="font-size: 16px; color: #8fc1e8; margin-left: auto;">футболки с принтом</span>
+            </div>
+            
+            <div class="contacts-grid">
+                <!-- Telegram -->
+                <div class="contact-item">
+                    <div class="contact-icon">✈️</div>
+                    <div class="contact-info">
+                        <span class="contact-label">Telegram:</span>
+                        <a href="https://t.me/moon_imperator" target="_blank" rel="noopener">@moon_imperator</a>
+                    </div>
+                </div>
+                
+                <!-- Email -->
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-info">
+                        <span class="contact-label">Почта:</span>
+                        <a href="mailto:procyonmoscow@gmail.com">procyonmoscow@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- декоративный элемент -->
+        <div class="glow-line"></div>
+        <div class="signature">
+            ❄️ arctic collection
+        </div>
+    </div>
+</body>
+</html>
